@@ -1,3 +1,5 @@
+import ClientSide from './components/clientSide'
+
 export default function PageA() {
   return (
     <div className="flex flex-col">
@@ -7,6 +9,7 @@ export default function PageA() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </div>
+      <ClientSide />
     </div>
   )
 }
