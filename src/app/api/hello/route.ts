@@ -1,17 +1,10 @@
-import { NextResponse } from 'next/server'
-
-export async function GET(req: Request) {
-  const data = {
-    creaters: 8000,
-    platformFeePercent: 3,
-    uptimePercent: 99.9,
-    paidCreaters: '70M',
-  }
-
-  return new NextResponse(JSON.stringify(data), {
-    status: 200,
+export const GET = async () => {
+  const res = await fetch('http://localhost:3000/data.json', {
     headers: {
-      'Content-Type': 'application/json',
+      'content-type': 'application/json',
     },
   })
+  const data = await res.json()
+
+  return Response.json({ data })
 }
