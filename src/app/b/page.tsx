@@ -1,11 +1,5 @@
+import { Data } from '@/types/types'
 import { getTimeoutData } from '@/utils/getTimeoutData'
-
-interface Data {
-  creaters: number
-  platformFeePercent: number
-  uptimePercent: number
-  paidCreaters: string
-}
 
 export default async function PageB() {
   const data = (await getTimeoutData()) as Data

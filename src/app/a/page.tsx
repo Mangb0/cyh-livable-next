@@ -1,13 +1,7 @@
 'use client'
 
+import { Data } from '@/types/types'
 import { useEffect, useState } from 'react'
-
-interface Data {
-  creaters: number
-  platformFeePercent: number
-  uptimePercent: number
-  paidCreaters: string
-}
 
 export default function PageA() {
   const [data, setData] = useState<Data>({
