@@ -1,5 +1,6 @@
 'use client'
 
+import Title from '@/components/Title'
 import { Data } from '@/types/types'
 import { useEffect, useState } from 'react'
 
@@ -33,12 +34,7 @@ export default function PageC() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col justify-center items-center h-52 gap-4">
-        <p className="text-4xl font-bold">Trusted by creators worldwide</p>
-        <p className="text-lg text-gray-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-      </div>
+      <Title />
       {!isLoading ? (
         <div className="flex flex-grow justify-center items-center w-full h-40 font-bold">
           <div className="flex flex-col flex-1 items-center">
