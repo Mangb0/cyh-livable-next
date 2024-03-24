@@ -13,14 +13,17 @@ export default function PageA() {
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
-    fetch('/api/hello', {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data)
-        setIsLoading(false)
-      })
+    const fetchData = async () => {
+      const response = await fetch('/api/hello')
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      const data = await response.json()
+      setData(data)
+      setIsLoading(false)
+    }
+
+    fetchData()
   }, [])
 
   if (isLoading) return <p>Loading...</p>

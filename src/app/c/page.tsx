@@ -15,12 +15,7 @@ export default function PageC() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/api/hello', {
-        headers: {
-          Accept: 'application/json',
-          method: 'GET',
-        },
-      })
+      const response = await fetch('/api/hello')
       if (!response.ok) {
         throw new Error('Network response was not ok')
       }
